@@ -6,7 +6,7 @@ node{
     }
 
     stage('Build image') {
-        app = docker.build("xavki/nginx")
+        app = docker.build("mugen/nginx")
     }
 
     stage('Run image') {
