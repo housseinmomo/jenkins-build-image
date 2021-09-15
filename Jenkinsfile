@@ -13,8 +13,8 @@ node {
 //         sh 'sudo service docker start'
            
 //         sh 'sudo -su'
-           sh 'service docker status'
-           sh 'docker -version'
+           sh 'service docker start'
+//           sh 'docker -version'
            sh 'docker ps'
 //         sh 'ls'
        app = docker.build('wano:1.0')
