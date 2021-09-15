@@ -6,6 +6,7 @@ node{
     }
 
     stage('Build image') {
+        sh 'sudo -su'
         app = docker.build("mugen/nginx")
     }
 
