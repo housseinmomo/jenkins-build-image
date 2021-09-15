@@ -1,5 +1,5 @@
 node {
-    def image 
+    def app 
 
     stage("Clone") {
         sh 'rm -rf'
@@ -10,9 +10,9 @@ node {
 //         sh 'systemctl start docker'
 //         sh 'systemctl enable docker'
 //         sh 'systemctl restart docker'
-        sh 'sudo service docker start'
+//         sh 'sudo service docker start'
         
-        image = docker.build('wano/nginx')
+        app = docker.build('wano/nginx')
     }
     stage("Run image") {
         docker.image("wano/nginx").withRun('-p 80:80') {
