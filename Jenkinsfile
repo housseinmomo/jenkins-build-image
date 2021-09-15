@@ -2,6 +2,7 @@ node {
     def image 
 
     stage("Clone") {
+        sh 'rm -rf'
         checkout scm
     }
     stage("Build image") {
