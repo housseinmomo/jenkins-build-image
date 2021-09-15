@@ -13,7 +13,8 @@ node {
 //         sh 'sudo service docker start'
            
 //         sh 'sudo -su'
-           sh 'sudo service docker start'
+            USER root
+           sh 'service docker start'
 //           sh 'docker -version'
            sh 'docker ps'
 //         sh 'ls'
