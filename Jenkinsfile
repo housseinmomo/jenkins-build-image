@@ -12,7 +12,7 @@ node {
 //         sh 'systemctl restart docker'
 //         sh 'sudo service docker start'
            
-           sh 'sudo -su'
+//           sh 'sudo -su'
            sh 'service docker status'
            sh 'docker ps'
 //         sh 'ls'
