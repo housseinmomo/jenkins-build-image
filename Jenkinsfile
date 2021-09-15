@@ -8,7 +8,7 @@ node {
     
     stage("Docker Permissions") {
        
-                sh "sudo chmod 666 /var/run/docker.sock"
+                sh "chmod 666 /var/run/docker.sock"
             
         }
     
