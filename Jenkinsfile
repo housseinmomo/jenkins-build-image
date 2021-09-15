@@ -5,7 +5,7 @@ node {
         checkout scm
     }
     stage("Build image") {
-        image = docker.Build('wano/nginx')
+        image = docker.build('wano/nginx')
     }
     stage("Run image") {
         docker.image("wano/nginx").withRun('-p 80:80') {
