@@ -10,7 +10,7 @@ node {
 //         sh 'systemctl start docker'
 //         sh 'systemctl enable docker'
 //         sh 'systemctl restart docker'
-        sh 'sudo /etc/init.d/docker start'
+        sh 'sudo service docker start'
         
         image = docker.build('wano/nginx')
     }
