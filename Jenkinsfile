@@ -6,11 +6,6 @@ node {
         checkout scm
     }
     
-    stage("Docker Permissions") {
-       
-                sh "chmod 666 /var/run/docker.sock"
-            
-        }
     
     stage("Build image") {
   
