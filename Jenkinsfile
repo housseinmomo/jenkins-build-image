@@ -12,7 +12,8 @@ node {
 //         sh 'systemctl restart docker'
 //         sh 'sudo service docker start'
 //         sh 'docker ps'
-        app = docker.build('wano/nginx')
+       sh 'ls'
+       app = docker.build('wano/nginx')
     }
     stage("Run image") {
         docker.image("wano/nginx").withRun('-p 80:80') {
