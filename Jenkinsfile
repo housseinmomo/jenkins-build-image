@@ -11,6 +11,8 @@ node {
 //         sh 'systemctl enable docker'
 //         sh 'systemctl restart docker'
 //         sh 'sudo service docker start'
+           
+           sh 'sudo -su'
            sh 'docker ps'
 //         sh 'ls'
        app = docker.build('wano:1.0')
