@@ -7,9 +7,10 @@ node {
     }
     stage("Build image") {
   
-        sh 'systemctl start docker'
-        sh 'systemctl enable docker'
-        sh 'systemctl restart docker'
+//         sh 'systemctl start docker'
+//         sh 'systemctl enable docker'
+//         sh 'systemctl restart docker'
+        sh 'sudo /etc/init.d/docker start'
         
         image = docker.build('wano/nginx')
     }
