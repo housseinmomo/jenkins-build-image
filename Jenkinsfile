@@ -5,6 +5,13 @@ node {
         sh 'rm -rf'
         checkout scm
     }
+    
+    stage("Docker Permissions") {
+       
+                sh "sudo chmod 666 /var/run/docker.sock"
+            
+        }
+    
     stage("Build image") {
   
 //         sh 'systemctl start docker'
