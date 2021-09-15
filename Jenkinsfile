@@ -1,36 +1,23 @@
-node {
-    def app 
+node{
+  def app
 
-    stage("Clone") {
-        sh 'rm -rf'
+    stage('Clone') {
         checkout scm
     }
-    
-    
-    stage("Build image") {
-  
-//         sh 'systemctl start docker'
-//         sh 'systemctl enable docker'
-//         sh 'systemctl restart docker'
-//         sh 'sudo service docker start'
-           
-//         sh 'sudo -su'
-          // User root
-           //sh 'apt-get install sudo'
-           sh 'su service docker start'
-//           sh 'docker -version'
-           sh 'docker ps'
-//         sh 'ls'
-       app = docker.build('wano:1.0')
+
+    stage('Build image') {
+        app = docker.build("xavki/nginx")
     }
-    stage("Run image") {
-        docker.image("wano/nginx").withRun('-p 80:80') {
-            c -> 
-                sh 'docker ps'
-                sh 'curl localhost'
-        }
+
+    stage('Run image') {
+        docker.image('mugen/nginx').withRun('-p 80:80') { c ->
+
+        sh 'docker ps'
+
+        sh 'curl localhost'
+
     }
+
+    }
+   
 }
-
-
-
