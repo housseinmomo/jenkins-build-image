@@ -5,7 +5,12 @@ node {
         checkout scm
     }
     stage("Build image") {
+        
+        sh 'sudo su'
         sh 'systemctl start docker'
+        sh 'systemctl enable docker'
+        sh 'systemctl restart docker'
+        
         image = docker.build('wano/nginx')
     }
     stage("Run image") {
